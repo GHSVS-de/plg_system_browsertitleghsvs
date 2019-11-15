@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_BROWSERTITLEGHSVS</name>
+	<author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer (GHSVS.de)</author>
+	<creationDate>2015-12-21</creationDate>
+	<copyright>Copyright (C) 2015 - 2019, G@HService Berlin Neukölln, Volkmar Volli Schlothauer (GHSVS.de). All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorUrl>https://www.ghsvs.de</authorUrl>
+	<version>2019.11.13</version>
+	<versionHistory>
+2015.12.20: Zusammenstellung Base-Plugin plg_system_mybaseplugin
+2015.12.21: Browsertitel im Backend sortieren.
+2016.05.10: Cosmetic: Delete unused files. Correct Copyright. Add LICENSE.txt.
+2019.11.13: namespacing and shit.
+		https://updates.ghsvs.de/changelog.php?file=browsertitleghsvs
+	</versionHistory>
+	<description>PLG_SYSTEM_BROWSERTITLEGHSVS_XML_DESCRIPTION</description>
+
+	<updateservers>
+		<server type="extension" priority="1" name="PLG_SYSTEM_BROWSERTITLEGHSVS">https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/browsertitleghsvs-update.xml</server>
+	</updateservers>
+
+	<changelogurl>https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/browsertitleghsvs-changelog.xml</changelogurl>
+
+	<infourl>https://updates.ghsvs.de/changelog.php?file=browsertitleghsvs</infourl>
+
+	<scriptfile>installerScript.php</scriptfile>
+	<!--<minimumPhp>7.0.0</minimumPhp>-->
+	<!-- <maximumPhp>5.4.0</maximumPhp> -->
+	<minimumJoomla>3.9.13</minimumJoomla>
+	<!--<maximumJoomla>3.9.99999</maximumJoomla>-->
+	<!--<allowDowngrades>1</allowDowngrades>-->
+
+	<files>
+		<filename plugin="browsertitleghsvs">browsertitleghsvs.php</filename>
+		<filename>LICENSE.txt</filename>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+				<field type="hidden" default="1" name="browsertitleghsvsplugin" />
+			</fieldset>
+
+			<fieldset name="backend" label="PLG_SYSTEM_BROWSERTITLEGHSVS_BACKEND">
+				<field name="sitename_backend" type="list" default="2" filter="integer"
+					label="PLG_SYSTEM_BROWSERTITLEGHSVS_SITENAME_BACKEND"
+					description="">
+					<option value="2">PLG_SYSTEM_BROWSERTITLEGHSVS_AFTER</option>
+					<option value="1">PLG_SYSTEM_BROWSERTITLEGHSVS_BEFORE</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sitename_client_backend" type="list" default="0" filter="integer"
+					label="PLG_SYSTEM_BROWSERTITLEGHSVS_SITENAME_CLIENT_BACKEND"
+					description="PLG_SYSTEM_BROWSERTITLEGHSVS_SITENAME_CLIENT_BACKEND_DESC"
+					showon="sitename_backend!:0">
+					<option value="0">PLG_SYSTEM_BROWSERTITLEGHSVS_CLIENT_SITENAME</option>
+					<option value="1">PLG_SYSTEM_BROWSERTITLEGHSVS_SITENAME_CLIENT</option>
+					<option value="2">PLG_SYSTEM_BROWSERTITLEGHSVS_CLIENT_ONLY</option>
+					<option value="3">PLG_SYSTEM_BROWSERTITLEGHSVS_SITENAME_ONLY</option>
+				</field>
+				<field name="separator" type="text" default=" / " filter="string"
+					label="PLG_SYSTEM_BROWSERTITLEGHSVS_SEPARATOR"
+					description=""
+					showon="sitename_backend!:0"/>
+				<field name="replace_title" type="list" default="2" filter="integer"
+					label="PLG_SYSTEM_BROWSERTITLEGHSVS_REPLACE_TITLE"
+					description="PLG_SYSTEM_BROWSERTITLEGHSVS_REPLACE_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+					<option value="2">PLG_SYSTEM_BROWSERTITLEGHSVS_REPLACE_TITLE_TRANSLATED</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
