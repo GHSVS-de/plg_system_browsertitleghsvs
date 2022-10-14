@@ -6,7 +6,7 @@
 	<copyright>Copyright (C) 2015 - 2019, G@HService Berlin Neukölln, Volkmar Volli Schlothauer (GHSVS.de). All rights reserved.</copyright>
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<authorUrl>https://www.ghsvs.de</authorUrl>
-	<version>2019.11.13</version>
+	<version>2019.11.15</version>
 	<versionHistory>
 2015.12.20: Zusammenstellung Base-Plugin plg_system_mybaseplugin
 2015.12.21: Browsertitel im Backend sortieren.
@@ -47,7 +47,7 @@
 			<fieldset name="backend" label="PLG_SYSTEM_BROWSERTITLEGHSVS_BACKEND">
 				<field name="sitename_backend" type="list" default="2" filter="integer"
 					label="PLG_SYSTEM_BROWSERTITLEGHSVS_SITENAME_BACKEND"
-					description="">
+					description="PLG_SYSTEM_BROWSERTITLEGHSVS_SITENAME_BACKEND_DESC">
 					<option value="2">PLG_SYSTEM_BROWSERTITLEGHSVS_AFTER</option>
 					<option value="1">PLG_SYSTEM_BROWSERTITLEGHSVS_BEFORE</option>
 					<option value="0">JNO</option>
